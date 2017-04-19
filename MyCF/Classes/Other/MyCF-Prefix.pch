@@ -1,0 +1,62 @@
+//
+//  MyCF-Prefixpch.pch
+//  MyCF
+//
+//  Created by 李扬 on 15/12/14.
+//  Copyright © 2015年 andyli. All rights reserved.
+//
+
+#ifndef MyCF_Prefix_pch
+#define MyCF_Prefix_pch
+#endif 
+
+// 1.判断是否为iOS8
+#define iOS8AndLater ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0)
+
+// 2.获得RGB颜色
+#define AndyColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:a]
+
+#define AndyNavigationBarTintColor AndyColor(255, 255, 255, 0.85)
+#define AndyPerformanceColor AndyColor(227, 74, 54, 1.0)
+
+#define AndyMainScreenSize [UIScreen mainScreen].bounds.size
+
+#define LoadingInfo @"正在加载中..."
+#define LoadingError @"加载过程出错，请重试"
+#define NetworkOfflineAndCacheIsNull @"无网络连接，且本地无缓存"
+#define NetWorkOffline @"网络已断开，请检查您的网络链接"
+#define IsDecodingQVideoUrl @"正在解码，请稍后..."
+#define DecodingQVideoUrlFailed @"视频解码失败"
+
+#define CFNewsCacheFileName @"CFNews.txt"
+#define ChampionCacheFileName @"Champion.txt"
+#define StrategyCacheFileName @"Strategy.txt"
+#define VideoCacheFileName @"Video.txt"
+#define VideoHeaderCacheFileName @"VideoHeader.txt"
+#define PictureCacheFileName @"Picture.txt"
+
+#define XAppDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
+
+#define SettingDoubleTapKey @"SettingDoubleTapKey"
+#define SettingIsVideoAutoBack @"SettingIsVideoAutoBack"
+
+#define AndyNewsTitleFont AndyMainScreenSize.width > 320 ? [UIFont systemFontOfSize:15] : [UIFont systemFontOfSize:13]
+#define AndyNewsTitleNotReadColor AndyColor(37, 35, 35, 1.0)
+#define AndyNewsTitleHasAlreadyReadColor AndyColor(118, 123, 124, 1.0)
+#define AndyNewsSummaryFont AndyMainScreenSize.width > 320 ? [UIFont systemFontOfSize:13] : [UIFont systemFontOfSize:11]
+
+// 3.自定义Log
+#ifdef DEBUG
+#define AndyLog(...) NSLog(__VA_ARGS__)
+#else
+#define AndyLog(...)
+#endif
+
+#ifdef __OBJC__
+
+#import "AppDelegate.h"
+#import "AndyHttpTool.h"
+#import "AndyCommonFunction.h"
+#import "AndyQVideoTool.h"
+#endif
+
